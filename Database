@@ -1,0 +1,40 @@
+-Subquerry(truy vấn lồng nhau) : còn được gọi là truy vấn nội bộ, là khái niệm để mô tả việc một truy vấn sử dụng kết quả của một truy vấn nội bộ khác trong mệnh đề truy vấn WHERE của các hệ thống sử dụng cấu trúc truy vấn dữ liệu theo ngôn ngữ SQL. Các kết quả trả về của truy vấn con trong một câu lệnh truy vấn thường được sử dụng để đặt giới hạn và hạn chế kết quả trả về của truy vấn cha trong những query phức tạp cần tham chiếu đến dữ liệu của nhiều bảng với điều kiện kết lọc phức tạp mà 1 query không thể nào xử lý được.
+ Ví dụ : SELECT ProductName
+	 FROM Product 
+	 WHERE Id IN (SELECT ProductId 
+                      FROM OrderItem
+               	      WHERE Quantity > 100)
+ 
+- Join : là phép kết nối dữ liệu từ nhiều bảng lại với nhau. Khi bạn cần truy vấn các cột dữ liệu từ nhiều bảng khác nhau để trả về trong cùng một tập kết quả, bạn cần dùng JOIN. Dưới đây là 4 loại JOIN trong SQL 
+ 	.INNER JOIN : trả về kết quả là các bản ghi mà trường được join ở hai bảng khớp nhau, các bản ghi chỉ xuất hiện ở một trong hai bảng sẽ bị loại.
+	.LEFT JOIN : trả về kết quả nằm ở bảng bên trái trong điều kiện ON và chỉ lấy ở các bảng còn lại những kết quả đáp ứng được điều kiện đặt ra (+ INNER JOIN)
+	.RIGHT JOIN : trả về kết quả nằm ở bảng bên phải trong điều kiện ON và chỉ lấy ở các bảng còn lại những kết quả đáp ứng được điều kiện đặt ra (+ INNER JOIN)
+	.FULL JOIN : trả về tất cả kết quả nằm ở bảng trái và phải và giá trị NULL đặt ở những nơi không đáp ứng được điều kiện. 
+
+-GROUP BY : Mệnh đề GROUP BY trong SQL được dùng trong lệnh SELECT để lấy dữ liệu từ nhiều bản ghi và nhóm kết quả vào 1 hoặc nhiều cột. Trong SQL, mệnh đề GROUP BY theo sau mệnh đề WHERE trong một lệnh SELECT và ở trước mệnh đề ORDER BY(nếu có) . 
+	Ví dụ : 
+	SELECT ten_sanpham, SUM(soluong) AS “Tong so luong” 
+	FROM sanpham
+	GROUP BY ten_sanpham;
+
+-ORDER BY : Mệnh đề ORDER BY trong SQL được sử dụng để sắp xếp dữ liệu theo thứ tự tăng dần hoặc theo thứ tự giảm dần, trên một hoặc nhiều cột. 
+	Ví dụ :
+	SELECT * FROM sinhvien
+     	ORDER BY ten ASC(tăng), hocphi DESC(giảm);
+
+-HAVING : Mệnh đề HAVING được dùng kết hợp với mệnh đề GROUP BY trong SQL để giới hạn nhóm các hàng trả về, chỉ khi điều kiện được được đáp ứng là TRUE.
+	Ví dụ :
+	SELECT bophan, MIN (luong) AS “Luong thap nhat”
+	FROM nhanvien
+	GROUP BY bophan
+	HAVING MIN (luong) >= 50000;
+
+-DISTINCT : Sử dụng khi muốn lấy kết quả trả về KHÁC NHAU và khác NULL của cột 
+-COUNT() : đếm số hàng của cột chỉ định hay nói cách khác để đếm số bản ghi(kết quả) từ cột, mà được mong đợi được trả về bởi một lệnh SELECT.
+-SUM() : trả về tổng số của một cột 
+-AVG() : trả về giá trị trung bình của một cột
+
+
+
+
+
