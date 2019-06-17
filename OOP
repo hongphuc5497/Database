@@ -1,0 +1,28 @@
+-4 đặc trưng :
+ .Tính đóng gói(Abstraction): Tức là trạng thái của đối tượng được bảo vệ không cho các truy cập từ code bên ngoài như thay đổi trạng thái hay nhìn trực tiếp. Việc cho phép môi trường bên ngoài tác động lên các dữ liệu của đối tượng như thế nào là tùy thuộc vào người viết mã. Thể hiện qua phạm vi truy cập 
+	-public : là cấp độ thoáng nhất, nó có thể gọi ở mọi nơi từ trong nội bộ của lớp đến lớp kế thừa nó, thậm chí cả bên ngoài lớp cũng gọi được.
+	-protected : thường được dùng khi bạn biết chắc là có lớp khác sẽ kế thừa lớp này và những phương thức, thuộc tính đó chỉ được dùng trong lớp kế thừa nó.
+	-private : thông thường để an toàn dữ liệu các thuộc tính đều ở dạng private. Có những trường hợp sau ta bắt buộc phải dùng ở dạng private để an toàn cho đối tượng.
+			+Những thuộc tính có tính biến đổi dữ liệu khi nhập và lấy dữ liệu như hai ví dụ về Username và Password ở trên.
+			+Những phương thức chỉ dùng trong nội bộ trong lớp đó, không có sử dụng bên ngoài lớp.
+
+ .Tính trừu tượng(Abstraction): Là một tiến trình ẩn các chi tiết triển khai và chỉ hiển thị tính năng tới người dùng. Tính trừu tượng co phép bạn loại bỏ tính phức tạp của đối tượng bằng cách chỉ đưa ra các thuộc tính và phương thức cần thiết của đối tượng trong lập trìn. Tính trừu tượng giúp bạn tập trung vào những cốt lõi cần thiết của đối tượng thay vì quan tâm cách nó thực hiện.
+
+ .TÍNH KẾ THỪA(Inheritance): Cho phép ta xây dựng một lớp mới dựa trên lớp sẵn có. Lớp đã có gọi là lớp CHA, lớp mới phát sinh gọi là LỚP CON và đương nhiên kế thừa tất cả các thành phần của lớp CHA, , có thể chia sẻ hay mở rộng các đặc tính sẵn có mà không phải tiến hành định nghĩa lại.
+
+ .TÍNH ĐA HÌNH(Polymorphism): Là khi 1 tác vụ được thực hiện theo nhiều cách khác nhau. Các phương thức hoàn toàn có thể giống nhau, nhưng việc xử lí luồng có thể khác nhau. Nói cách khác : Tính đa hình cung cấp khả năng cho phép người lập trình gọi trước một phương thức của đối tượng, tuy chưa xác định đối tượng có phương thức muốn gọi hay không. Đến khi thực hiện runtime, chương tình mới xác định được đối tượng và gọi phương thức tương ứng của đối tượng đó. 
+
+-Override(ghi đè)
+ .Là phương thức đã xuất hiện ở lớp cha và xuất hiện tiếp ở lớp 
+ .Khi đối tượng thuộc lớp con gọi phương thức thì sẽ chọn lựa và chạy theo phương thức trong lớp con.
+ .Nếu lớp con không có phương thức đó thì mới lên kiếm ở lớp cha để chạy.
+ .Ghi đè là hình thức đa hình(polymorphism) trong quá trình thực thì (runtime)
+  Vd: Lớp chó không có phương thức chạy, nó sẽ lấy ở lớp động vật có vú (cha) để chạy, còn lớp con người có phương thức chạy, nó sẽ gọi phương thức chạy ở lớp con người 
+
+-Overload(nạp chồng)
+ .Các phương thức nằm trong cùng 1 lớp, có cùng tên với nhau nhưng có danh sách đối số khác nhau được gọi là các phương thức nạp chồng.
+ .Hàm tạo cũng có thể được nạp chồng
+ .Tùy theo ta gọi đối số thế nào mà nó sẽ họi hàm tương ứng
+ .Nạp chồng là hình thức đa hình(polymorphism) trong quá trình biên dịch (compile time)
+  Vd: Lớp con người và lớp chó kế thừa từ lớp động vật có vú, phương thức sũa sẽ bị nạp chồng tùy vào đối số mà ta đưa vào, 
+
