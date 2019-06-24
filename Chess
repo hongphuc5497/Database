@@ -1,0 +1,37 @@
+class Quân_cờ
+-------------
+Vị trí : x,y (dòng, cột)
+Màu cờ : 
+-------------
+def Cách_di_chuyển() 
+
+
+=>Có 7 class con kế thừa 
+{class Tướng < Quân_cờ
+--------------
+Vị trí
+Màu cờ 
+--------------
+self.Cách_di_chuyển}
+...
+...
+class Tốt < Quân_cờ
+
+
+class Bàn cờ 
+---------------
+implement Quân_cờ
+---------------
+constructor 
+{ 32 đối tượng quân cờ }
+def Xuất_cách_di_chuyển(quân cờ)
+---------------
+
+Bàn_cờ::
+bàncờ(0) = Tướng.new(đen, 1, 5)
+bàncờ(1) = Tốt.new(trắng, 3, 6)
+...
+32 dòng => tạo lập được bàn cờ 
+
+puts Xuất_cách_di_chuyển(Tốt) => Xuất cách di chuyển của quân tốt
+
